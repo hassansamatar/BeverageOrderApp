@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BeverageOrderApp.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly ApplicationDbContext _db;

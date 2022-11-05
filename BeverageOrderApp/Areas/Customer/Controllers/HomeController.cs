@@ -4,6 +4,7 @@ using System.Diagnostics;
 
 namespace BeverageOrderApp.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
