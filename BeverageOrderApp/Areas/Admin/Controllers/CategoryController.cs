@@ -103,8 +103,8 @@ namespace BeverageOrderApp.Controllers
                 _db.SaveChanges();
             TempData["success"] = "Category Deleted successfully";
             return RedirectToAction("Index");
-           
-          
+
+            
         }
     }
 }
