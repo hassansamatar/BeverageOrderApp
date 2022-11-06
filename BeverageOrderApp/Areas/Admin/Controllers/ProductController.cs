@@ -1,5 +1,6 @@
 ﻿using BeverageOrderApp.Data;
 using BeverageOrderApp.Models;
+using BeverageOrderApp.Models.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -29,6 +30,7 @@ namespace BeverageOrderApp.Controllers
         //Get
         public IActionResult Upsert(int? Id)
         {
+            ProductVM productVM = new();
             Product product = new Product();
             IEnumerable<SelectListItem> categoryList = _db.Categories.Select(
                 u => new SelectListItem
@@ -53,9 +55,11 @@ namespace BeverageOrderApp.Controllers
             else
             {
                 //Update Product
+                product= _db.Products.FirstOrDefault(p => p.Id == Id);
+                return View(product);
+               
             }
           
-            return View(product);
         }
 
         //Post

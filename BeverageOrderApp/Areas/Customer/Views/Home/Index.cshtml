@@ -1,19 +1,24 @@
-﻿@*@model IEnumerable<BeverageOrderApp.Models.Product>
-<div class="row pb-3">
-    @foreach(var obj in Model)
-    {
-        <div class="col-lg-3 col-md-6">
-            <div class="row p-2"> 
-                 <div class="col-12" style="border:1px solid #008bca;border-radius:5px"> 
-                     <div class="card">
-                         <img src="@obj.ImageUrl" class="card-img-top rounded">
+﻿@model IEnumerable<Product>
 
+
+
+@foreach(var product in Model)
+{
+    <div class="col-lg-3 col-md-6">
+            <div class="row p-2"> 
+                 <div class="col-12" style="border:1px solid #008bca;border-radius:5px;"> 
+                     <div >
+                         <img src="@product.ImageUrl" class="card-img-top rounded">
+                         <h3> @product.Name</h3>
+                         
                          </div>
 
             </div>
             </div>
+           
         </div>
-    }
-</div>*@
+       
+}
+
 
 <h2> Hello</h2>

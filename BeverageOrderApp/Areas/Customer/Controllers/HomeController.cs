@@ -22,36 +22,24 @@ namespace BeverageOrderApp.Controllers
 
         public IActionResult Index()
         {
-            //IEnumerable<Product> beverageList = _db.Products;
-            Product product = new Product();
-            IEnumerable<SelectListItem> categoryList = _db.Categories.Select(
-                u => new SelectListItem
-                {
-                    Text = u.Name,
-                    Value = u.Id.ToString(),
-                });
-            IEnumerable<SelectListItem> beverageList = _db.BeverageTypes.Select(
-               u => new SelectListItem
-               {
-                   Text = u.Name,
-                   Value = u.Id.ToString(),
-               });
-
-                     
-                // Create new Product
-                ViewBag.categoryList = categoryList;
-                ViewBag.beverageList = beverageList;
-                return View(product);
+            IEnumerable<Product> productList = _db.Products;
+                   return View(productList);
            
 
            
         }
 
-        public IActionResult Details(int Id)
+        public IActionResult Details(int id)
         {
-           
+            //ShoppingCart cartObj = new()
+            //{
+            //    Count = 1,
+            //    Product = _db.Products.FirstOrDefault(x => x.Id == id)
 
-            return View();
+            //};
+            //return View(cartObj);
+            Product product = _db.Products.FirstOrDefault(x => x.Id == id); 
+            return View(product);
         }
         public IActionResult Privacy()
         {
