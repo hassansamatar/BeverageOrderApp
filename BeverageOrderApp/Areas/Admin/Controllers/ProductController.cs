@@ -2,6 +2,7 @@
 using BeverageOrderApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace BeverageOrderApp.Controllers
 {
@@ -13,13 +14,15 @@ namespace BeverageOrderApp.Controllers
         public ProductController(ApplicationDbContext db, IWebHostEnvironment hostEnvironment)
         {
             _db = db;
+            _db.Products.Include(u => u.Category);
+            _db.Products.Include(u => u.BeverageType);
             _hostEnvironmet = hostEnvironment;
         }
         public IActionResult Index()
         {
-            IEnumerable<Category> categoryList = _db.Categories;
+            
 
-            return View(categoryList);
+            return View();
         }
      
 
@@ -117,5 +120,17 @@ namespace BeverageOrderApp.Controllers
 
             
         }
+
+        #region API Calls
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            
+            var productList = _db.Products.Include(u => u.BeverageType);
+            productList.Include(u => u.Category);
+            return Json(new { data = productList });
+        }
+        #endregion
     }
+
 }
