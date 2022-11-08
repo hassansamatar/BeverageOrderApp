@@ -9803,11 +9803,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\Trace2\\BeverageOrderApp\\BeverageOrderApp\\BeverageOrderApp.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\Trace\\BeverageOrderApp\\BeverageOrderApp\\BeverageOrderApp.csproj",
       "projectName": "BeverageOrderApp",
-      "projectPath": "C:\\Users\\user\\Desktop\\Trace2\\BeverageOrderApp\\BeverageOrderApp\\BeverageOrderApp.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\Trace\\BeverageOrderApp\\BeverageOrderApp\\BeverageOrderApp.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\Trace2\\BeverageOrderApp\\BeverageOrderApp\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\Trace\\BeverageOrderApp\\BeverageOrderApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

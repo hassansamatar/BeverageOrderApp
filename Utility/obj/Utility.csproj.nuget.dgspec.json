@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\Trace2\\BeverageOrderApp\\Utility\\Utility.csproj": {}
+    "C:\\Users\\user\\Desktop\\Trace\\BeverageOrderApp\\Utility\\Utility.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\Trace2\\BeverageOrderApp\\Utility\\Utility.csproj": {
+    "C:\\Users\\user\\Desktop\\Trace\\BeverageOrderApp\\Utility\\Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\Trace2\\BeverageOrderApp\\Utility\\Utility.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Trace\\BeverageOrderApp\\Utility\\Utility.csproj",
         "projectName": "Utility",
-        "projectPath": "C:\\Users\\user\\Desktop\\Trace2\\BeverageOrderApp\\Utility\\Utility.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\Trace\\BeverageOrderApp\\Utility\\Utility.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\Trace2\\BeverageOrderApp\\Utility\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Trace\\BeverageOrderApp\\Utility\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
