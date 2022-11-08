@@ -17,8 +17,8 @@ var dataTable;
                     "render": function (data) {
                         return `
                             <div class="w-35 btn-group" role="group" >
-                                <a href="/Admin/Product/Upsert?id=${data}"
-                                   class="btn btn-primary mx-2">  <i class="bi bi-pencil-square"></i>Edit </a>
+                                <a href="/Admin/Product/Edit?id=${data}"
+                                   class="btn btn-primary mx-2">  <i class="bi bi-pencil-square"></i>Update </a>
                                      <a class="btn btn-danger mx-2"><i class="bi bi-trash-fill"></i>Delete</a>
                             </div>
 

@@ -1,12 +1,12 @@
-﻿@model BeverageOrderApp.Models.Category
+﻿@model BeverageOrderApp.Models.Product
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1></h1>
 
-<h4>Category</h4>
+<h4>Product </h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -17,12 +17,7 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DisplayOrder" class="control-label"></label>
-                <input asp-for="DisplayOrder" class="form-control" />
-                <span asp-validation-for="DisplayOrder" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+           <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>

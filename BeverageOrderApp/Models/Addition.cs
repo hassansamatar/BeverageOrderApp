@@ -9,8 +9,7 @@ namespace BeverageOrderApp.Models
         [Required]
         public string Name { get; set; }
 
-        public string Strength { get; set; }
-         
+             
     
     
     }

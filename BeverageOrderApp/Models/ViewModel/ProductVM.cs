@@ -6,11 +6,10 @@ namespace BeverageOrderApp.Models.ViewModel
     public class ProductVM
     {
         [ValidateNever]
-        public Product  Product{ get; set; }
+        public Product Product { get; set; }
         [ValidateNever]
-        public IEnumerable<SelectListItem> categoryList { get; set; }
-        [ValidateNever]
-        public IEnumerable<SelectListItem> beverageList { get; set; }
+        public IEnumerable<SelectListItem> AdditionList { get; set; }
 
     }
+    
 }

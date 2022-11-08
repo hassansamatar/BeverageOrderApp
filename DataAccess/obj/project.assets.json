@@ -907,11 +907,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\BeverageOrderApp\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\Trace2\\BeverageOrderApp\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\user\\Desktop\\BeverageOrderApp\\DataAccess\\DataAccess.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\Trace2\\BeverageOrderApp\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\BeverageOrderApp\\DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\Trace2\\BeverageOrderApp\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

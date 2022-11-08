@@ -10,18 +10,14 @@ namespace BeverageOrderApp.Models
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-        [ValidateNever]
-        public string ImageUrl { get; set; }
-        [Required]
-        [ForeignKey("CategoryId")]
-        public int CategoryId { get; set; }
-        [ValidateNever]
-        public Category Category { get; set; }
-        public int BeverageTypeId { get; set; }
-        [ValidateNever]
-        public BeverageType BeverageType { get; set; }
-       // public int AdditionId { get; set; }
-       // public Addition Addition { get; set; }
+        //[ValidateNever]
+        //public string ImageUrl { get; set; }
+        //[Required]
+        //[ForeignKey("AdditionId")]
+        //public int AdditionId { get; set; }
+        //[ValidateNever]
+        //public Addition Addition { get; set; }
+    
 
     }
 }

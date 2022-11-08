@@ -15,80 +15,127 @@ namespace BeverageOrderApp.Controllers
         public ProductController(ApplicationDbContext db, IWebHostEnvironment hostEnvironment)
         {
             _db = db;
-            _db.Products.Include(u => u.Category);
-            _db.Products.Include(u => u.BeverageType);
+         
             _hostEnvironmet = hostEnvironment;
         }
         public IActionResult Index()
         {
-            
+            IEnumerable<Product> productList = _db.Products;
+
+            return View(productList);
 
             return View();
         }
-     
 
+
+        //// Get
+        // public IActionResult Upsert(int? Id)
+        // {
+        //     // ProductVM productVM = new();
+        //     Product product = new Product();
+        //     //IEnumerable<SelectListItem> additionList = _db.Additions.Select(
+        //     //    u => new SelectListItem
+        //     //    {
+        //     //        Text = u.Name,
+        //     //        Value = u.Id.ToString(),
+        //     //    }) ;
+
+        //     if (Id == null | Id == 0)
+        //     {
+        //         // Create new Product
+        //         //  ViewBag.additionList = additionList;
+
+
+        //         return View(product);
+        //     }
+        //     else
+        //     {
+        //         //Update Product
+        //         product = _db.Products.FirstOrDefault(p => p.Id == Id);
+        //         return View(product);
+
+        //     }
+
+        // }
+
+        // //Post
+        // [HttpPost]
+        // [ValidateAntiForgeryToken]
+        // public IActionResult Upsert(Product obj)
+        // {
+        //    if (ModelState.IsValid)
+        //     {
+        //         //  _db.Categories.Update(obj);
+        //         //string wwwrootPath = _hostEnvironmet.WebRootPath;
+        //         //if(file != null)
+        //         //{
+        //         //    string fileName = Guid.NewGuid().ToString();
+        //         //    var uploads= Path.Combine(wwwrootPath, @"images\products");
+        //         //    var extension = Path.GetExtension(file.FileName);
+        //         //    using (var fileStreams =new FileStream(Path.Combine(uploads, file+extension
+        //         //        ), FileMode.Create))
+        //         //    {
+        //         //        file.CopyTo(fileStreams);
+        //         //    }
+        //         //    obj.ImageUrl = @"\images\products" + fileName + extension;
+        //         //}
+        //         _db.Add(obj);
+        //         _db.SaveChanges();
+        //         TempData["success"] = "Product  Created successfully";
+        //         return RedirectToAction("Index");
+        //     }
+        //     return View(obj); 
+        // }
         //Get
-        public IActionResult Upsert(int? Id)
+        public IActionResult Create()
         {
-            ProductVM productVM = new();
-            Product product = new Product();
-            IEnumerable<SelectListItem> categoryList = _db.Categories.Select(
-                u => new SelectListItem
-                {
-                    Text = u.Name,
-                    Value = u.Id.ToString(),
-                }) ;
-            IEnumerable<SelectListItem> beverageList = _db.BeverageTypes.Select(
-               u => new SelectListItem
-               {
-                   Text = u.Name,
-                   Value = u.Id.ToString(),
-               });
-                  
-            if (Id == null | Id == 0)
-            {
-                // Create new Product
-                ViewBag.categoryList = categoryList;
-                ViewBag.beverageList =beverageList;
-                return View(product);
-            }
-            else
-            {
-                //Update Product
-                product= _db.Products.FirstOrDefault(p => p.Id == Id);
-                return View(product);
-               
-            }
-          
+            return View();
         }
 
         //Post
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upsert(Product obj, IFormFile? file)
+        public IActionResult Create(Product obj)
         {
-           if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                //  _db.Categories.Update(obj);
-                string wwwrootPath = _hostEnvironmet.WebRootPath;
-                if(file != null)
-                {
-                    string fileName = Guid.NewGuid().ToString();
-                    var uploads= Path.Combine(wwwrootPath, @"images\products");
-                    var extension = Path.GetExtension(file.FileName);
-                    using (var fileStreams =new FileStream(Path.Combine(uploads, file+extension
-                        ), FileMode.Create))
-                    {
-                        file.CopyTo(fileStreams);
-                    }
-                    obj.ImageUrl = @"\images\products" + fileName + extension;
-                }
-                _db.Add(obj);
+                _db.Products.Add(obj);
                 _db.SaveChanges();
-                TempData["success"] = "Product  Created successfully";
+                TempData["success"] = "Product Created successfully";
                 return RedirectToAction("Index");
             }
-            return View(obj); 
+            return View(obj);
+
+        }
+        //Get
+        public IActionResult Edit(int? Id)
+        {
+            if (Id == null | Id == 0)
+            {
+                return NotFound();
+            }
+
+            var product = _db.Products.Find(Id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return View(product);
+        }
+
+        //Post
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Product obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Products.Update(obj);
+                _db.SaveChanges();
+                TempData["success"] = "Product Edited successfully";
+                return RedirectToAction("Index");
+            }
+            return View(obj);
         }
         //Delete
         //Get
@@ -99,7 +146,7 @@ namespace BeverageOrderApp.Controllers
                 return NotFound();
             }
           
-            var category = _db.Categories.Find(Id);
+            var category = _db.Products.Find(Id);
             if (category == null)
             {
                 return NotFound();
@@ -112,14 +159,14 @@ namespace BeverageOrderApp.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeletePost(int? Id)
         {
-            var obj = _db.Categories.Find(Id);
+            var obj = _db.Products.Find(Id);
             if(Id == null)
             {
                 return NotFound();
             }
-                _db.Categories.Remove(obj);
+                _db.Products.Remove(obj);
                 _db.SaveChanges();
-            TempData["success"] = "Category Deleted successfully";
+            TempData["success"] = "Product Deleted successfully";
             return RedirectToAction("Index");
 
             
@@ -129,9 +176,9 @@ namespace BeverageOrderApp.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            
-            var productList = _db.Products.Include(u => u.BeverageType);
-            productList.Include(u => u.Category);
+
+            var productList = _db.Products; 
+           
             return Json(new { data = productList });
         }
         #endregion

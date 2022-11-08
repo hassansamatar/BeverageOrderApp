@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B4JOEDXPgx+Z6U0BduZvho7FoZxTKoxAGqSHb7cC+xRBfsJ866YVYRUSgnkLNcF7GzONzAtijpLM69RPRkus+g==",
+  "dgSpecHash": "czSyVSbkjgwFUI9Qng81v/LmbDrOdFqpv16XVgiGWfvLF7OIMNX8Ravw1m85s1ssjPXCA3KcC24Lj9G9K1aHmg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\BeverageOrderApp\\BeverageOrderApp\\BeverageOrderApp.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\Trace2\\BeverageOrderApp\\BeverageOrderApp\\BeverageOrderApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
