@@ -12,11 +12,7 @@ namespace BeverageOrderApp.Models
         public string Name { get; set; }
         //[ValidateNever]
         //public string ImageUrl { get; set; }
-        //[Required]
-        //[ForeignKey("AdditionId")]
-        //public int AdditionId { get; set; }
-        //[ValidateNever]
-        //public Addition Addition { get; set; }
+        
     
 
     }

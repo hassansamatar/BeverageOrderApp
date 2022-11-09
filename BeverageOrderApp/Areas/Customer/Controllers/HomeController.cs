@@ -13,7 +13,7 @@ namespace BeverageOrderApp.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _db;
 
-        public HomeController(ILogger<HomeController> logger,  ApplicationDbContext db)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
         {
             _logger = logger;
             _db = db;
@@ -23,15 +23,16 @@ namespace BeverageOrderApp.Controllers
         public IActionResult Index()
         {
             IEnumerable<Product> productList = _db.Products;
-                   return View(productList);
-           
+            return View(productList);
 
-           
+
+
         }
 
-        public IActionResult Details(int id)
+        public IActionResult Details2(int id)
         {
-            var product = _db.Products.FirstOrDefault(x => x.Id == id); 
+           
+            var product = _db.Products.FirstOrDefault(x => x.Id == id);
             return View(product);
         }
 
@@ -40,16 +41,31 @@ namespace BeverageOrderApp.Controllers
             var product = _db.Products.FirstOrDefault(x => x.Id == Id);
             return View(product);
         }
-        public IActionResult Privacy()
+
+
+        // Detaits2
+        public IActionResult Details(int productId)
         {
-            return View();
+
+            ShoppingCart cartObj = new()
+            {
+                Id = productId,
+                Count = 1,
+                Product = _db.Products.FirstOrDefault(x => x.Id == productId),
+                //AdditionList = (IEnumerable<Addition>)_db.Additions.Select(i => new SelectListItem {
+                //    Text = i.Name,
+                //    Value = i.Id.ToString()
+                //}),
+                
+
+            };
+
+             
+            return View(cartObj);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-    }
+}
+
+        
 
 }
