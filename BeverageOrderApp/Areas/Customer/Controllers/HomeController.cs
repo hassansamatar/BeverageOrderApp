@@ -31,14 +31,13 @@ namespace BeverageOrderApp.Controllers
 
         public IActionResult Details(int id)
         {
-            //ShoppingCart cartObj = new()
-            //{
-            //    Count = 1,
-            //    Product = _db.Products.FirstOrDefault(x => x.Id == id)
-
-            //};
-            //return View(cartObj);
             var product = _db.Products.FirstOrDefault(x => x.Id == id); 
+            return View(product);
+        }
+
+        public IActionResult Order(int Id)
+        {
+            var product = _db.Products.FirstOrDefault(x => x.Id == Id);
             return View(product);
         }
         public IActionResult Privacy()
@@ -52,4 +51,5 @@ namespace BeverageOrderApp.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+
 }
