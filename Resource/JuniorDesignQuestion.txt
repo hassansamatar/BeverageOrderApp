@@ -1,0 +1,19 @@
+As a caring manager, I like to make sure my team is kept refreshed by making the mid-morning beverages. However, as the team gets bigger I find it difficult to remember who has what. So, what I'd like is a simple application that will:-
+1. Enable each team member to add their preferences.
+2. Enable me to see a list of team members and their beverages of choice.
+
+In order to prevent people being silly and, for example, specifying "Gin and Tonic" as their beverage, I need the selection to be made from a specified list.  It should be possible for me to edit this list to add additional choices (if, for example, someone develops a liking for Lapsang Souchong).
+When specifying their beverage, team members must also be able to specify the following additions:-
+	Milk
+	Non-dairy milk substitute
+	Sugar
+	Sweetener
+	Strength (one of Weak/Normal/Strong)
+Not all of these will likely be applicable to all beverages (for example, I don't think anyone should be allowed to drink Earl Grey with milk ;)  ), but for simplicity all of the additions should be shown regardless of the beverage selected.
+
+Please produce :-
+1. A suitable data-base schema for the above.
+2. A design for key parts of the application.  This could include wire-frames, class structures, etc.
+
+It is absolutely not necessary to provide a working implementation for this (it is not a test of coding skills).  You may, however prefer to show snippets of code to illustrate some aspects of your design, which is fine.  
+Should any part of the requirement be unclear, please make a reasonable assumption, but also note any questions you'd ask to seek clarification.  Also, please feel free to make suggestions for any potential improvements you think might be worth considering.
