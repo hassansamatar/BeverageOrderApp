@@ -54,7 +54,14 @@ namespace BeverageOrderApp.Controllers
                 Product = _db.Products.FirstOrDefault(x => x.Id == productId)
               
 
+
+
         };
+
+          
+           
+            
+     
             // IEnumerable<T> GetAll(Expression<Func<T, bool>> ? filter = null, string? includeProperties = null);
             
 
