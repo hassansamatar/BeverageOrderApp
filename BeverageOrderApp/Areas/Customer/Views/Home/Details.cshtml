@@ -2,7 +2,7 @@
 <form method="post">
      <input hidden asp-for="Id" />
         <div class="card  container pt-4">
-            <div class="card-header bg-primary text-light ml-0  row ">
+            <div class="card-header bg-primary text-white ml-0  row ">
                 <div class="col-12 col-md-6">
                     <h1 class="text-white-50">@Model.Product.Name</h1>
                    
@@ -12,12 +12,12 @@
                                 <div class="col-10"><input asp-for="Count" class="form-control"  /></div>
                             </div>
                            <div class="mb-3 col-6">
-                           <label> Addition</label>
-			              <select "Addition"  class="form-select">
+                           <labeltext-light>Addition List</label>
+			              <select asp-for"Addition" asp-items"ViwBag.additionList" class="form-select">
 				          <option disabled selected>--Select Addition --</option>
 			             </select>
 			            
-		        </div>
+		        </div
                         </div>
                         <div class="col-12 col-lg-3 offset-lg-1 text-center">
                             <img src="" width="100%" class="rounded" />
@@ -31,7 +31,7 @@
                         <a class="btn btn-success form-control " style="height:50px;" asp-action="Index">Back to Home</a>
                     </div>
                     <div class="col-12 col-md-6 pb-1">
-                        <button type="submit" value="Add to Cart" class="btn btn-primary form-control" style="height:50px;">Add to Cart</button>
+                        <button type="submit" value="Add to Cart" class="btn btn-success form-control" style="height:50px;">Add to Cart</button>
                     </div>
                 </div>
             </div>

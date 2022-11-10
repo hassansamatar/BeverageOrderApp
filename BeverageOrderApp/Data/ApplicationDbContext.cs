@@ -10,5 +10,6 @@ public class ApplicationDbContext : DbContext
     public DbSet<Addition> Additions { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet <ShoppingCart> ShoppingCarts { get; set; }
+  
 
 }

@@ -51,16 +51,22 @@ namespace BeverageOrderApp.Controllers
             {
                 Id = productId,
                 Count = 1,
-                Product = _db.Products.FirstOrDefault(x => x.Id == productId),
-                //AdditionList = (IEnumerable<Addition>)_db.Additions.Select(i => new SelectListItem {
-                //    Text = i.Name,
-                //    Value = i.Id.ToString()
-                //}),
-                
+                Product = _db.Products.FirstOrDefault(x => x.Id == productId)
+              
 
-            };
+        };
+            // IEnumerable<T> GetAll(Expression<Func<T, bool>> ? filter = null, string? includeProperties = null);
+            
 
-             
+            //var additionList =_db.AdditionStores.Select(u => new SelectListItem
+            //{
+            //    Text = u.Name,
+            //    Value = u.Id.ToString()
+
+            // });
+
+            // ViewBag.additionList =additionList;
+
             return View(cartObj);
         }
 
