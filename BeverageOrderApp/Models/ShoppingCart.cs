@@ -16,7 +16,9 @@ namespace BeverageOrderApp.Models
         public Product Product { get; set; }
         [Range(1,3, ErrorMessage ="Max of 3 beverages allowed")]
          public int Count { get; set; }
-    
-       
+
+       // public IEnumerable<Addition> AdditionslIst{ get; set; }
+
+
     }
 }
